@@ -13,13 +13,20 @@
 - Una volta installato creare un utente amministratore.
 
 - Andare su content-types builder e creare il content-type Gioco.
-  - Gioco deve contenere i seguenti campi: nome (testo), descrizione (rich text), url (testo), codiceGioco(testo), anteprima(media).
+  - Gioco deve contenere i seguenti campi: 
+    - nome (testo)
+    - descrizione (rich text)
+    - url (testo)
+    - codiceGioco (testo)
+    - anteprima (media).
 
 - Creare il content-type Genere.
-  - Genere deve avere il campo tipologia(testo).
+  - Genere deve avere il campo tipologia (testo).
 
 - Creare il content-type Sviluppatore.
-  - Sviluppatore deve avere i campi nome(testo), uuid(testo).
+  - Sviluppatore deve avere i campi:
+    - nome (testo)
+    - uuid (testo).
 
 - Andare sul conllection type Gioco 
    - aggiungere il campo genere di tipo "relazione" nel seguente modo:
