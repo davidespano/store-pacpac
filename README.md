@@ -1,12 +1,12 @@
-#Store-PacPac
+# Store-PacPac
  piattaforma di delivery per il progetto pacpac
 
-###Prerequisiti
+### Prerequisiti
 
 - Installare node.js 
 - installare il pacchetto "react-router-dom".
 
-###Set up
+### Set up
 
 - Creare un progetto strapi: npx create-strapi-app my-project --quickstart
 
