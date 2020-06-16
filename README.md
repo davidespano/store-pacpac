@@ -1,5 +1,5 @@
 # Store-PacPac
- piattaforma di delivery per il progetto pacpac
+ Piattaforma di delivery per il progetto pacpac
 
 ### Prerequisiti
 
