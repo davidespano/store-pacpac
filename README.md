@@ -1,68 +1,47 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+###Prerequisiti:
 
-## Available Scripts
+- Installare node.js 
+- installare il pacchetto "react-router-dom".
 
-In the project directory, you can run:
+###Set up:
 
-### `npm start`
+- Creare un progetto strapi: npx create-strapi-app my-project --quickstart
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Una volta installato creare un utente amministratore.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Andare su content-types builder e creare il content-type Gioco.
+  - Gioco deve contenere i seguenti campi: nome (testo), descrizione (rich text), url (testo), codiceGioco(testo), anteprima(media).
 
-### `npm test`
+- Creare il content-type Genere.
+  - Genere deve avere il campo tipologia(testo).
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Creare il content-type Sviluppatore.
+  - Sviluppatore deve avere i campi nome(testo), uuid(testo).
 
-### `npm run build`
+- Andare sul conllection type Gioco 
+   - aggiungere il campo genere di tipo "relazione" nel seguente modo:
+   
+        <img src="https://scontent-fco1-1.xx.fbcdn.net/v/t1.15752-9/104233610_692927291506720_8335634051392451950_n.png?_nc_cat=106&_nc_sid=b96e70&_nc_ohc=TjR1cStSQVsAX-ggZ5S&_nc_ht=scontent-fco1-1.xx&oh=021c459f62cb62d44955c5cc5cd05d46&oe=5F0E8625" width="500" alt="relazione-genere-giochi">
+  
+   - aggiungere il campo sviluppatore di tipo "relazione" nel seguente modo:
+   
+        <img src="https://scontent-fco1-1.xx.fbcdn.net/v/t1.15752-9/104241645_266915991391025_5844857991833724937_n.png?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=idnJV21P7HwAX-HOYDR&_nc_ht=scontent-fco1-1.xx&oh=2f274c4ff323f034acddc1a85ca2347d&oe=5F0DD56C" width="500" alt="relazione-svilupatore-giochi">
+     
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Andare nella sezione Ruoli e Permessi successivamente su public.
+  - In gioco ci devono essere i permessi attivi per create, find, findone, update.
+  - Genere deve avere il permesso solamente in find.
+  - Sviluppatore deve avere il permesso per create, find, findone.
+  - Andare in upload e dare il permesso "upload".
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Creare i generi dei futuri giochi andando in "Genere" e succcessivamente su "Aggiungi nuovo genere".
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+###Esecuzione:
 
-### `npm run eject`
+- Aprire il terminale nella cartella contente il progetto scaricato da questo repository e lanciare il comando: npm start.
+- Aprire il terminale nella cartella contenente il progetto creato con strapi e lanciare il comando: npm run develop.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In caso di eventuali problemi con la creazione del progetto strapi consultare la seguente guida [strapi](https://strapi.io/documentation/v3.x/getting-started/quick-start.html#_1-install-strapi-and-create-a-new-project)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
