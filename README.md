@@ -37,7 +37,7 @@
   - Sviluppatore deve avere il permesso per create, find, findone.
   - Andare in upload e dare il permesso "upload".
 
-- Creare i generi dei futuri giochi andando in "Genere" e succcessivamente su "Aggiungi nuovo genere".
+- Creare i generi dei futuri giochi andando in "Genere" e successivamente su "Aggiungi nuovo genere".
 
 ### Esecuzione:
 
