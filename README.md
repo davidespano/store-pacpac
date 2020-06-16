@@ -4,11 +4,11 @@
 ### Prerequisiti
 
 - Installare node.js 
-- installare il pacchetto "react-router-dom".
+- Installare il pacchetto react-router-dom.
 
 ### Set up
 
-- Creare un progetto strapi: npx create-strapi-app my-project --quickstart
+- Creare un progetto strapi: ``npx create-strapi-app my-project --quickstart``
 
 - Una volta installato creare un utente amministratore.
 
@@ -41,10 +41,10 @@
 
 ### Esecuzione:
 
-- Aprire il terminale nella cartella contente il progetto scaricato da questo repository e lanciare il comando: npm start.
-- Aprire il terminale nella cartella contenente il progetto creato con strapi e lanciare il comando: npm run develop.
+- Aprire il terminale nella cartella contente il progetto scaricato da questo repository e lanciare il comando: ``npm start``.
+- Aprire il terminale nella cartella contenente il progetto creato con strapi e lanciare il comando: ``npm run develop``.
 
 
-In caso di eventuali problemi con la creazione del progetto strapi consultare la seguente guida [strapi](https://strapi.io/documentation/v3.x/getting-started/quick-start.html#_1-install-strapi-and-create-a-new-project)
+In caso di eventuali problemi con la creazione del progetto, consultare la [documentazione di strapi](https://strapi.io/documentation/v3.x/getting-started/quick-start.html#_1-install-strapi-and-create-a-new-project)
 
 
