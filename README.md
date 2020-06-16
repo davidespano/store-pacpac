@@ -39,7 +39,7 @@
 
 - Creare i generi dei futuri giochi andando in "Genere" e succcessivamente su "Aggiungi nuovo genere".
 
-###Esecuzione:
+### Esecuzione:
 
 - Aprire il terminale nella cartella contente il progetto scaricato da questo repository e lanciare il comando: npm start.
 - Aprire il terminale nella cartella contenente il progetto creato con strapi e lanciare il comando: npm run develop.
