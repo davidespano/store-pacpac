@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import axios from "axios";
+import settings from "../settings";
 
 
 class PostForm extends Component {
@@ -59,7 +60,7 @@ class PostForm extends Component {
                 genere: this.state.genere,
                 sviluppatore: this.state.user[0]
             }
-            axios.post('http://localhost:1337/giocos', data)
+            axios.post(settings.api + 'giocos', data)
                 .then(res => {
                     console.log(this.state)
                     Array.from(this.state.anteprima).forEach(file =>
@@ -71,10 +72,10 @@ class PostForm extends Component {
                         dataImage.append('ref', 'gioco');
                         dataImage.append('field', 'anteprima');
                         console.log(dataImage)
-                        axios.post('http://localhost:1337/upload', dataImage)
+                        axios.post(settings.api + 'upload', dataImage)
                             .then( res => {
                                 alert("Gioco aggiunto")
-                                window.location = "http://localhost:8000/Home"
+                                window.location = settings.store +"Home"
                             })
                             .catch(error =>{
                                     console.log(error);
@@ -102,7 +103,7 @@ class PostForm extends Component {
                 genere: this.state.genere
             }
 
-            axios.put('http://localhost:1337/giocos/'+this.state.id, data)
+            axios.put(settings.api + 'giocos/'+this.state.id, data)
                 .then(res => {
                     console.log(res);
                     Array.from(this.state.anteprima).forEach(file =>
@@ -115,10 +116,10 @@ class PostForm extends Component {
                         dataImage.append('field', 'anteprima');
                         console.log(dataImage)
 
-                        axios.post('http://localhost:1337/upload', dataImage)
+                        axios.post(settings.api + 'upload', dataImage)
                                 .then( res => {
                                     alert("Gioco modificato")
-                                    window.location = "http://localhost:8000/Home"
+                                    window.location = settings.store + "Home"
                                 })
                                     .catch(error =>{
                                         console.log(error);
@@ -161,13 +162,13 @@ class PostForm extends Component {
 
         const data = new FormData();
         data.append('files', this.state.foto)
-        axios.post('http://localhost:1337/upload', data)
+        axios.post(settings.api + 'upload', data)
             .then(response => {console.log(response)})
             .catch(error => {console.log(error)})
     }
 
     async componentDidMount() {
-        let response = await fetch("http://localhost:1337/generes");
+        let response = await fetch(settings.api + 'generes');
         if (!response.ok) {
             return
         }
@@ -177,7 +178,7 @@ class PostForm extends Component {
         this.state.uuid = this.getCookie('uuidToken')
         this.state.userName = this.getCookie('usernameToken')
 
-        let response2 = await fetch("http://localhost:1337/sviluppatores?uuid="+this.state.uuid);
+        let response2 = await fetch(settings.api + "sviluppatores?uuid="+this.state.uuid);
         let user = await response2.json()
         if(user.length === 0){
             let data = {
@@ -185,7 +186,7 @@ class PostForm extends Component {
                 uuid: this.state.uuid
             }
 
-            axios.post('http://localhost:1337/sviluppatores', data)
+            axios.post(settings.api + 'sviluppatores', data)
                 .then(res => {
                     this.state.user = res.data;
                 })
@@ -203,9 +204,9 @@ class PostForm extends Component {
         //let nome = gameValues.get('gameName');
         let gameName = gameValues.get('gameName');
         const codiceGame = gameValues.get('gameId');
-        let response3 = await fetch("http://localhost:1337/giocos?codiceGioco="+codiceGame);
-        let games = await response3.json()
-        this.setState({game: games })
+        let response3 = await fetch(settings.api + "giocos?codiceGioco="+codiceGame);
+        let games = await response3.json();
+        this.setState({game: games });
 
         if(this.state.game.length === 0){
         }else{
@@ -278,7 +279,7 @@ class PostForm extends Component {
 
                             </div>
                         </div>
-                        <div id={'input-url'} className="form-group">
+                        <div id={'input-api'} className="form-group">
                             <label id="UrlGioco" htmlFor="inputAddress2">Url gioco</label>
                             <br/>
                             {!codiceGame && <h4 className="urlgame">PacPac/{this.state.nome}</h4>}

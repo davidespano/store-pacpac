@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import IconCross from '../Icons/IconCross';
 import "../index.css";
 import SlideButton from "../SliderComponent/SlideButton";
-
+import settings from "../settings";
 
 
 class ContentSearch extends Component {
@@ -51,7 +51,7 @@ class ContentSearch extends Component {
             })
         }
 
-        image.src = "http://localhost:1337"+ game.anteprima[this.state.imageCounter].url
+        image.src = settings.api+ game.anteprima[this.state.imageCounter].url
     }
 
     onClickBack(game){
@@ -66,7 +66,7 @@ class ContentSearch extends Component {
             })
         }
 
-        image.src = "http://localhost:1337"+ game.anteprima[this.state.imageCounter].url
+        image.src = ${settings.api}+ game.anteprima[this.state.imageCounter].url
     }
 
 
@@ -96,13 +96,13 @@ class ContentSearch extends Component {
 
 
                     <div className="gameLink">
-                        <a href={`http://localhost:3006?gameId=${game.codiceGioco}`}>{game.url}</a>
+                        <a href={`${settings.pacpac}?gameId=${game.codiceGioco}`}>{game.url}</a>
                     </div>
 
 
                 </div>
                 <div className="Search_content__background">
-                    <img  onClick={() => this.toggleHidden(0)} src={`http://localhost:1337${game.anteprima[imgCounter].url}`}/>
+                    <img  onClick={() => this.toggleHidden(0)} src={`${settings.api}${game.anteprima[imgCounter].url}`}/>
                 </div>
 
 
@@ -114,7 +114,7 @@ class ContentSearch extends Component {
                 <div className="SearchanteprimaContainer">
                     <SlideButton onClick={()=>this.onClickBack(game)} type="prev" />
                     <div className="anteprimaImg">
-                        <img id="priaryImg" src={`http://localhost:1337${game.anteprima[this.state.imageCounter].url}`}/>
+                        <img id="priaryImg" src={`${settings.api}${game.anteprima[this.state.imageCounter].url}`}/>
                     </div>
                     <SlideButton onClick={()=>this.onClickForward(game)} type="next" />
                     <button className="secondClose" onClick={() => this.toggleHidden()}><IconCross/></button>
@@ -123,7 +123,7 @@ class ContentSearch extends Component {
 
                 <div className="content__gallery">
                     {game.anteprima.map((foto, index) =>
-                        <img  onClick={() => this.imageOpen(index)} src={`http://localhost:1337${foto.url}`}/>
+                        <img  onClick={() => this.imageOpen(index)} src={`${settings.api}${foto.url}`}/>
                     )}
                 </div>
 

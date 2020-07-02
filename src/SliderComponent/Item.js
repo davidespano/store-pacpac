@@ -4,6 +4,8 @@ import SliderContext from './context'
 import ShowDetailsButton from './ShowDetailsButton'
 import Mark from './Mark'
 import '../index.css'
+import settings from "../settings";
+
 
 const Item = ({ game }) => (
     <SliderContext.Consumer>
@@ -17,7 +19,7 @@ const Item = ({ game }) => (
                         'item--open': isActive,
                     })}
                 >
-                    <img src={`http://localhost:1337${game.anteprima[0].url}`} alt="" />
+                    <img src={`${settings.api}${game.anteprima[0].url}`} alt="" />
                     <h5 className="card-title">{game.nome}</h5>
 
                     <ShowDetailsButton onClick={() => onSelectSlide(game)} />

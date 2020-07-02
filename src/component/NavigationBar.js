@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import SearchPage from "./SearchPage";
 import axios from "axios";
+import settings from "../settings";
 
 
 const NavigationBar = (props) => {
@@ -8,7 +9,7 @@ const NavigationBar = (props) => {
 
     useEffect(() =>{
         const getType = async () => {
-            const result = await axios.get(`http://localhost:1337/generes`);
+            const result = await axios.get(`${settings.api}generes`);
             setType(result.data);
         }
         getType();
@@ -30,7 +31,7 @@ const NavigationBar = (props) => {
                                 <a className="nav-link" href={"/Home"}>Home</a>
                             </li>
                             <li className="nav-item active">
-                                <a className="nav-link" href={"http://localhost:3006/"}>PacPac</a>
+                                <a className="nav-link" href={settings.pacpac}>PacPac</a>
                             </li>
 
 
