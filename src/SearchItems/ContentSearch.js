@@ -66,7 +66,7 @@ class ContentSearch extends Component {
             })
         }
 
-        image.src = ${settings.api}+ game.anteprima[this.state.imageCounter].url
+        image.src = settings.api + game.anteprima[this.state.imageCounter].url
     }
 
 
