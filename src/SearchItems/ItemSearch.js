@@ -4,6 +4,7 @@ import MarkSearch from './MarkSearch'
 import FilterHomeContext from './contextSearch'
 import ShowDetailsButton from '../SliderComponent/ShowDetailsButton'
 import '../index.css'
+import settings from "../settings";
 
 
 
