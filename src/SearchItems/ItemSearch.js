@@ -18,7 +18,7 @@ const ItemSearch = ({ game }) => (
                         'singleElement--open': isActive,
                     })}
                 >
-                    <img src={`http://localhost:1337${game.anteprima[0].url}`} alt="" />
+                    <img src={`${settings.api}${game.anteprima[0].url}`} alt="" />
                     <h5 className="card-title">{game.nome}</h5>
 
                     <ShowDetailsButton onClick={() => onSelectSlide(game)} />

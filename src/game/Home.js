@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Slider from "../SliderComponent";
 import FilterHome from "../SearchItems";
+import settings from "../settings";
 
 
 class Home extends Component{
@@ -19,11 +20,11 @@ class Home extends Component{
 
 
     async componentDidMount() {
-        let response = await fetch("http://localhost:1337/giocos");
-        let games = await response.json()
-        this.setState({game: games })
-        let secondResponse = await fetch("http://localhost:1337/generes");
-        let types = await secondResponse.json()
+        let response = await fetch(settings.api + "giocos");
+        let games = await response.json();
+        this.setState({game: games });
+        let secondResponse = await fetch(settings.api + "generes");
+        let types = await secondResponse.json();
         this.setState({type: types })
 
     }
